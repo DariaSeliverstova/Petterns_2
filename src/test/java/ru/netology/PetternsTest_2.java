@@ -2,7 +2,7 @@ package ru.netology;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.SelenideElement;
+
 import org.junit.jupiter.api.Test;
 
 import org.junit.jupiter.api.BeforeEach;
@@ -28,8 +28,11 @@ public class PetternsTest_2 {
         $x("//input[@name='login']").setValue(registeredUser.getLogin());
         $x("//input[@name='password']").setValue(registeredUser.getPassword());
         $x("//span[@class='button__text']").click();
-        $x("//h2[@class='heading heading_size_l heading_theme_alfa-on-white']").shouldHave(Condition.text("Личный кабинет"));
+        //$x("//h2[@class='heading heading_size_l heading_theme_alfa-on-white']").shouldHave(Condition.text("Личный кабинет"));
+        $x("//div[@class='App_appContainer__3jRx1']").shouldHave(Condition.text("Личный кабинет"));
     }
+
+
 
     @Test
     public void shouldNotRegisteredUser() {
